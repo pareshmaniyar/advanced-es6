@@ -11,17 +11,19 @@ var dog = new LivingEntity({
 	z: 1
 });
 LivingEntity.prototype.moveWest = function(){
-	this.x--;
+    this.x--;
+    console.log(this);
 }
 //x,y,z ---> moveWest
-LivingEntity.prototype.makeSound = function(){
+LivingEntity.prototype.makeSound = () => {
 	console.log('meow');
 }
 //x,y,z ---> moveWest, makeSound
 
 //dog uses its prototype because it doesn't have makeSound as an attribute
 dog.makeSound(); //meow
-
+dog.moveWest();//LivingEntity { x: 4, y: 0, z: 1 }
+dog.moveWest();//LivingEntity { x: 3, y: 0, z: 1 }
 dog.makeSound = function(){
 	console.log('woof');
 }

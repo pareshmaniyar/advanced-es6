@@ -25,7 +25,7 @@ let promise2 = new Promise(function(resolve, reject) {
 console.log("Before calling promise.then");
 promise2.then(
   (data) => {
-    console.log("After Promises in .Then of resolve");
+    console.log("resolve not called");
     console.log(JSON.stringify(data));
   },
   (rejectError) => {

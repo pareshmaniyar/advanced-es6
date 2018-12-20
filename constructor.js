@@ -11,8 +11,10 @@ let SuperHero = function (strength) {
   this.strength = strength;
 }
 
-//achieving private property using closures
+let Flash = new SuperHero('Fast');
+console.log(Flash);
 
+//achieving private property using closures
 let Planet = function (_planet) {
   this.setPlanet = function (planet) {
     _planet = planet;
@@ -21,12 +23,7 @@ let Planet = function (_planet) {
     return _planet;
   }
 }
-
-let Flash = new SuperHero('Fast');
-console.log(Flash);
-
 let ReachPlanet = new Planet("Venus");
-
 console.log(ReachPlanet.getPlanet());
 ReachPlanet.setPlanet("Mars");
 console.log(ReachPlanet.getPlanet());
