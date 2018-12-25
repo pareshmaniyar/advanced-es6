@@ -2,6 +2,7 @@ console.log("Hello World");
 (async function() {
   console.log("Before promise intialisation");
   let promise = new Promise((resolve, reject) => {
+    console.log("After promise intialisation");
     setTimeout(() => resolve({data: "Vashi", value: "Black Sheep"}), 500);
   });
   let result = await promise;
@@ -20,4 +21,7 @@ console.log("Hello World");
     console.log("err is:", err);
   }
 })();
+
+console.log(new Error("what is this?"));
+console.log("///////////////////////////////");
 

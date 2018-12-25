@@ -1,7 +1,7 @@
 console.log("Before initiating promise");
 let promise = new Promise(function(resolve, reject) {
   console.log("Entered Promise");
-  setTimeout(() => resolve({data: "102", name: "Batman"}), 1000);
+  setTimeout(() => resolve({data: "007", name: "Bond"}), 1000);
   console.log("Below Resolve");
 });
 console.log("Before calling promise.then");
@@ -19,7 +19,7 @@ console.log("After calling promise///////////////////////////");
 console.log("Before initiating promise");
 let promise2 = new Promise(function(resolve, reject) {
   console.log("Entered Promise");
-  setTimeout(() => reject(new Error("Error Message")), 1000);
+  setTimeout(() => reject(new Error("I am Batman")), 1000);
   console.log("Below Resolve");
 });
 console.log("Before calling promise.then");

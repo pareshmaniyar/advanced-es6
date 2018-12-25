@@ -1,5 +1,5 @@
-const arr = [1,2,3,4,5,6];
-const obj = {data: "1", value: "d", x: {y:"1", z: "3c"}}
+const arr = [11,21,31,41,51,61,72];
+const obj = {data: "1", l: "d", x: {y:"1", z: "3c", l: { b: "a", v: false}}}
 for(i of arr) {
   console.log(i);
 }
@@ -16,21 +16,21 @@ for(i in obj) {
 }
 let n=2;
 function* getEvenNumber() {
-  while(true) {
+  while(n<6) {
     yield n;
     n= n+2;
   }
 }
 console.log((getEvenNumber()).next());
-//console.log((getEvenNumber()).next().next().value); gives error
+// console.log((getEvenNumber()).next().next().value); gives error
 console.log((getEvenNumber()).next().value);
 console.log((getEvenNumber()).next().value);
 console.log("//////////////");
 
 const p = getEvenNumber();
 console.log(p.next());
-console.log(p.next().value);
-console.log(p.next().value);
-console.log(p.next().value);
+console.log(p.next());
+console.log(p.next().done);
+console.log(p.next());
 console.log(p.next().value);
 
