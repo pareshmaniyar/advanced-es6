@@ -10,4 +10,12 @@ console.log("Closure");
  * new place?
  */
 
+function makeAdder(x) {
+  return function (y) {
+    return x + y;
+  }
+}
 
+const increament = makeAdder(1);
+const x = increament(9);
+console.log(x);
