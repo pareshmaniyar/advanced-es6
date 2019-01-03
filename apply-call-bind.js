@@ -25,3 +25,7 @@ var pokemonName2 = function(snack, hobby) {
 
 pokemonName2.call(pokemon,'sushi', 'algorithms'); // Pika Chu  loves sushi and algorithms
 pokemonName2.apply(pokemon,['sushi', 'algorithms']); // Pika Chu  loves sushi and algorithms
+
+str = 'abcdefg';
+revStr = str.split('').reverse().join("");
+console.log(revStr);
