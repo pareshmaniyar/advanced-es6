@@ -1,8 +1,51 @@
-for (let i = 0; i <=5; i++) {
-  setTimeout(function(i) {
-    console.log(i);
-  });
+'use strict'
+for (var i = 0; i <=5; i++) {
+    setTimeout(function(i) {
+        console.log(i);//all undefined
+    });
 }
+//passing the needed parameters into the inner function
+for (var i = 0; i <=5; i++) {
+    setTimeout((function(i_local) {
+        return function () {
+            console.log(i_local);//0 to 5
+        }
+    })(i),
+    );
+}
+//es6
+for (var i = 0; i <=5; i++) {
+    setTimeout(function() {
+        console.log(i);//all 6
+    });
+}
+for (let i = 0; i <=5; i++) {
+    setTimeout(function() {
+        console.log(i);// 0 to 5
+    });
+}
+for (let i = 0; i <=5; i++) {
+    setTimeout(() => {
+        console.log(i);// 0 to 5
+    });
+}
+
+// for (let i = 0; i <=5; i++) {
+//     setTimeout(function(i) {
+//         console.log(i);
+//     });
+// }
+
+// for (var i = 0; i <=5; i++) {
+//     setTimeout((i) => {
+//         console.log(i);
+//     });
+// }
+// for (let i = 0; i <=5; i++) {
+//     setTimeout((i)=> {
+//         console.log(i);
+//     });
+// }
 // var a = [1, 3, 4, 2, 3, 1, 4];
 
 /* var output = {
@@ -10,7 +53,7 @@ for (let i = 0; i <=5; i++) {
     3: 2,
     2: 1,
     4: 2
-}*/
+}
 
 //
 
@@ -60,3 +103,4 @@ class Map {
 }
 const x1 = new Map();
 
+*/
