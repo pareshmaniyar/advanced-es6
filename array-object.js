@@ -10,39 +10,40 @@ if(obj instanceof Object) console.log("Object2");
 
 console.log(arr.constructor);
 console.log(arr.length);
-console.log();
-arr.prototype.print = function() {
+
+Array.prototype.print = function() {
   console.log('In print method in prototype');
 }
 arr.print();
-arr.concat(['concated content']);
-console.log('after concat: ', arr);
+let concatOutput = arr.concat(['concated content']);
+console.log(concatOutput);
 
 /** */
 arr.copyWithin();
 arr.entries();
 /** */
 arr = [1,2,3];
-arr.every(function(x){
+let everyResponse = arr.every(function(x){
   return x>2;
 });
-
+console.log(everyResponse);
 arr.fill();
 
 let filterOutput = arr.filter(x => {if(x>1) return true});
 console.log(filterOutput);
 
-arr.find();
-let findIndexOutput = arr.findIndex(x=> {if(x>1) return true});
+let findOutput = arr.find(x => x>1);
+let findIndexOutput = arr.findIndex(x=> x>1);
+console.log(findOutput);
 console.log(findIndexOutput);
 
 arr.forEach((x,index) => {
   if(x%2 === 0) {
     arr[index] = x+1; 
   }
-}); 
+});
 
-arr.from('',x=>x+1);
+arr.from('', x => x+1);
 console.log(arr.includes(2));
 console.log(arr.indexOf(2));
 arr.isArray();
