@@ -56,7 +56,56 @@ for (let codepoint of "𠮷") console.log(codepoint)
 //  no equivalent in ES5
 //  no equivalent in ES5
 
-
+//Classes
+//Class Definition
+//More intuitive, OOP-style and boilerplate-free classes.
+class Shape {
+  constructor (id, x, y) {
+      this.id = id
+      this.move(x, y)
+  }
+  move (x, y) {
+      this.x = x
+      this.y = y
+  }
+}
+var Shape = function (id, x, y) {
+  this.id = id;
+  this.move(x, y);
+};
+Shape.prototype.move = function (x, y) {
+  this.x = x;
+  this.y = y;
+};
+//Class Inheritance
+//More intuitive, OOP-style and boilerplate-free inheritance.
+class Rectangle extends Shape {
+  constructor (id, x, y, width, height) {
+      super(id, x, y)
+      this.width  = width
+      this.height = height
+  }
+}
+class Circle extends Shape {
+  constructor (id, x, y, radius) {
+      super(id, x, y)
+      this.radius = radius
+  }
+}
+//es5
+var Rectangle = function (id, x, y, width, height) {
+  Shape.call(this, id, x, y);
+  this.width  = width;
+  this.height = height;
+};
+Rectangle.prototype = Object.create(Shape.prototype);
+Rectangle.prototype.constructor = Rectangle;
+var Circle = function (id, x, y, radius) {
+  Shape.call(this, id, x, y);
+  this.radius = radius;
+};
+Circle.prototype = Object.create(Shape.prototype);
+Circle.prototype.constructor = Circle;
 
 
 
