@@ -21,12 +21,14 @@ LivingEntity.prototype.makeSound = () => {
 //x,y,z ---> moveWest, makeSound
 
 //dog uses its prototype because it doesn't have makeSound as an attribute
+console.log('dog', dog);
 dog.makeSound(); //meow
 dog.moveWest();//LivingEntity { x: 4, y: 0, z: 1 }
 dog.moveWest();//LivingEntity { x: 3, y: 0, z: 1 }
 dog.makeSound = function(){
 	console.log('woof');
 }
+console.log('dog', dog);//{ x: 3, y: 0, z: 1, makeSound: [Function] }
 //x,y,z,makeSound ---> moveWest, makeSound
 
 //now dog has makeSound as an attribute, it will use that instead of it's prototype

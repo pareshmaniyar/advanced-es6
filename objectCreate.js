@@ -1,4 +1,5 @@
 console.dir(Object);
+console.dir(JSON.stringify(Object));//undefined
 const myObject = Object.create(Object.prototype);
 const myLiteral = {};
 const noProto = Object.create(null);

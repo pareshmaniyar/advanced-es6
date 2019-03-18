@@ -5,6 +5,7 @@ timeConsumingScript = (callback) => {
 }
 (function f1 () {
     console.log("In f1");
+//    console.log(this); weird stuff here, scope
 })();
 (function f2 () {
     console.log("f2 starts");
