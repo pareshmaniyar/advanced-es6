@@ -36,3 +36,19 @@ console.log("call-back hell");
         }, 100);
     }, 100);
 })();
+(function first(){
+    console.log("in first");
+    setTimeout( function second(){
+        console.log("in second");
+        setTimeout( function third(){
+            console.log("in third");
+            setTimeout( function fourth(){
+                console.log("in fourth");
+                setTimeout( function fifth(){
+                    console.log("in fifth");
+                    console.log("pyramid structure. Very hard to understand");
+                }, 50);
+            }, 50);
+        }, 50);
+    }, 50);
+})();

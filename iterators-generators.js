@@ -14,6 +14,7 @@ for(i in arr) {
 for(i in obj) {
   console.log(i);
 }
+console.log('****************');
 let n=2;
 function* getEvenNumber() {
   while(n<6) {
@@ -28,6 +29,7 @@ console.log((getEvenNumber()).next().value);
 console.log("//////////////");
 
 const p = getEvenNumber();
+console.log(p);
 console.log(p.next());
 console.log(p.next());
 console.log(p.next().done);

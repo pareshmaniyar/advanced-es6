@@ -1,9 +1,9 @@
 //conclusion: __proto__ for Object and prototype for contructor function
 //below line doesn't work if function is replaced with () => {}
 let f = function() {
-    this.a = 1,
-    this.b = 2,
-    this.func2 = () => console.log('func2 direct property function', this.a, this.c);
+  this.a = 1,
+  this.b = 2,
+  this.func2 = () => { console.log('func2 direct property function', this.a, this.c)};
 }
 //f.prototype = { b: 3, c: 4, func: () => console.log('prototype function: ', this.c, this.a, this)};//wrong way to add prototype properties
 f.prototype.b = 3;
@@ -40,13 +40,14 @@ z.func();
 z.func2();
 z.func3();
 z.func4();//doesn't work, points to global object
+
 g = { a: 1, function(){ console.log('asdad')} }
 console.log("g is: ", g);
 var q = {
-    a: 2,
-    function() {
-        return this.a + 1;
-    }
+  a: 2,
+  function() {
+    return this.a + 1;
+  }
 }
 console.log('q.function()',q.function());
 
