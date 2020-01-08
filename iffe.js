@@ -19,4 +19,10 @@ var foo = "foo";
     console.log(foo);
 })();
 
+let f1 = function(){
+    console.log(this.foo);
+}
+f1();
+f1.bind(this);
+f1();
 
