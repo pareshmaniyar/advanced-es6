@@ -1,5 +1,13 @@
 //global scope
 var a = 1;
+var a = 1; //valid to declare multiple times
+
+let greeting = "say Hi";
+/*
+let greeting = "say Hello instead";//error: Identifier 'greeting' has already been declared
+*/
+//const declarations are block scoped like let
+//const cannot be updated or re-declared
 console.log(a);//1
 (function one() {
   console.log(a);//1
@@ -19,18 +27,21 @@ console.log(a);//1
   }
   console.log(a);//2
 })();
+console.log("...");
 (function four() {
   if (true) {
     let a = 2;
   }
   console.log(a);//1
 })();
+console.log("***");
 (function four() {
   {
     let a = 2;
   }
   console.log(a);//1
 })();
+console.log("...");
 (() => {
   {let a = 2; }
   console.log(a);//1
