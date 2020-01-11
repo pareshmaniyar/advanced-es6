@@ -3,6 +3,7 @@
 const obj = {
     "easyKey": "1prop"
 };
+//data descriptor
 Object.defineProperty(obj, 'cantChangeDateType', {
     value: 42,
     configurable: false, //can't change
@@ -25,7 +26,7 @@ obj.cantChangeDateType = "Try but won't work";
 obj.cantChangeDateType = 21;
 console.log(obj.cantChangeDateType);
 console.log(JSON.stringify(obj));
-
+//accessor descriptor
 function CustomObject(){
     var i = 3;
     var arr = [];
@@ -84,3 +85,41 @@ try {
 }
 console.log(JSON.stringify(obj2));
 
+console.log(Object.keys(Object.prototype));
+console.log(Object.getOwnPropertyNames(Object));
+
+console.log(Object.length);
+let arrayOfObjectKeys = Object.getOwnPropertyNames(Object);
+for(let key in arrayOfObjectKeys){
+    console.log(arrayOfObjectKeys[key] + ": " + Object[arrayOfObjectKeys[key]].toString());
+}
+console.log(Object.name);
+
+console.log(Object.prototype)// [object Object]
+console.log(Object.getPrototypeOf)// function getPrototypeOf() { [native code] }
+console.log(Object.setPrototypeOf)// function setPrototypeOf() { [native code] }
+
+console.log(Object.assign)// function assign() { [native code] }
+console.log(Object.create)// function create() { [native code] }
+
+console.log(Object.getOwnPropertyDescriptor)// function getOwnPropertyDescriptor() { [native code] }
+console.log(Object.getOwnPropertyDescriptors)// function getOwnPropertyDescriptors() { [native code] }
+console.log(Object.getOwnPropertyNames)// function getOwnPropertyNames() { [native code] }
+console.log(Object.getOwnPropertySymbols)// function getOwnPropertySymbols() { [native code] }
+
+console.log(Object.is)// function is() { [native code] }
+console.log(Object.defineProperties)// function defineProperties() { [native code] }
+console.log(Object.defineProperty)// function defineProperty() { [native code] }
+
+console.log(Object.preventExtensions)// function preventExtensions() { [native code] }
+console.log(Object.isExtensible)// function isExtensible() { [native code] }
+
+console.log(Object.freeze)// function freeze() { [native code] }
+console.log(Object.isFrozen)// function isFrozen() { [native code] }
+
+console.log(Object.seal)// prevents adding and/or removing properties
+console.log(Object.isSealed)// Returns true if the object is sealed, otherwise false
+
+console.log(Object.keys)// function keys() { [native code] }
+console.log(Object.entries)// function entries() { [native code] }
+console.log(Object.values)// function values() { [native code] }
