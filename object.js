@@ -70,3 +70,17 @@ Object.freeze(objInstance);
 objInstance.i = 7;
 console.log(objInstance.i);
 
+//preventExtensions
+const obj2 = {
+    "l": ["p", 1]
+}
+obj2.k = true;
+console.log(JSON.stringify(obj2));
+Object.preventExtensions(obj2);
+try {
+    obj2.m = "ss";
+} catch(e){
+    console.log("preventExtensions Error");
+}
+console.log(JSON.stringify(obj2));
+
