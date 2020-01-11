@@ -7,6 +7,7 @@ class Phone {
     this.len = len;
   }
 }
+
 class Iphone extends phone {
   constructor(sim, len, modelName, fingerSensor, faceRecognition) {
     super(this, sim, len);
@@ -15,6 +16,7 @@ class Iphone extends phone {
     this.faceRecognition = faceRecognition;
   }
 }
+
 class OldNokia extends phone {
   constructor(sim, len, modelName, canBreakRock) {
     super(sim, len);
@@ -22,6 +24,7 @@ class OldNokia extends phone {
     this.canBreakRock = canBreakRock;
   }
 }
+
 // Es5
 var Phone5 = function (sim, len, weight) {
   this.sim = sim;
