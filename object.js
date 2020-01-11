@@ -120,6 +120,6 @@ console.log(Object.isFrozen)// function isFrozen() { [native code] }
 console.log(Object.seal)// prevents adding and/or removing properties
 console.log(Object.isSealed)// Returns true if the object is sealed, otherwise false
 
-console.log(Object.keys)// function keys() { [native code] }
-console.log(Object.entries)// function entries() { [native code] }
-console.log(Object.values)// function values() { [native code] }
+console.log(Object.keys)// returns an array of a given object's own enumerable property
+console.log(Object.entries(Object))// returns an array of a given object's own enumerable only string-keyed property [key, value] pairs
+console.log(Object.values(obj2))// returns an array of a given object's own enumerable property values
