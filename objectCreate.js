@@ -1,3 +1,13 @@
+/**
+ * Ways to Create Objects:
+ * 1. Object Literals
+ * 2. Constructor Functions
+ * 3. The Object() constructor which generates an empty object
+ *    You can also pass an object literal to the Object() constructor as a parameter
+ * 4. Object's create method you can create a new object based on any existing object
+ * 
+ */
+
 console.dir(Object);
 console.dir(JSON.stringify(Object));//undefined
 const myObject = Object.create(Object.prototype);

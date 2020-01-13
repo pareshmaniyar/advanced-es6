@@ -1,3 +1,9 @@
+/**
+ * Distinction between an object's prototype and the prototype property on constructor functions
+ * Object.getPrototypeOf(obj) is the property on each instance
+ * 
+ */
+
 let Car = function(color) {
   this.color = color;
   this.getColor = function () {

@@ -1,5 +1,6 @@
 'use strict'
 //No errors thrown even when tried manupulating - dangerous
+// if a property has configurable as true, we can delete it and vice-versa
 const obj = {
     "easyKey": "1prop"
 };
@@ -104,15 +105,14 @@ console.log(Object.create)// function create() { [native code] }
 
 console.log(Object.getOwnPropertyDescriptor)// function getOwnPropertyDescriptor() { [native code] }
 console.log(Object.getOwnPropertyDescriptors)// function getOwnPropertyDescriptors() { [native code] }
-console.log(Object.getOwnPropertyNames)// function getOwnPropertyNames() { [native code] }
 console.log(Object.getOwnPropertySymbols)// function getOwnPropertySymbols() { [native code] }
 
-console.log(Object.is)// function is() { [native code] }
+console.log(Object.is(obj2, obj))// determines whether two values are the same value. Follow mozilla for how the values are equal. Shallow comparison
 console.log(Object.defineProperties)// function defineProperties() { [native code] }
 console.log(Object.defineProperty)// function defineProperty() { [native code] }
 
-console.log(Object.preventExtensions)// function preventExtensions() { [native code] }
-console.log(Object.isExtensible)// function isExtensible() { [native code] }
+console.log(Object.preventExtensions(obj2))// function preventExtensions() { [native code] }
+console.log(Object.isExtensible(obj2))// function isExtensible() { [native code] }
 
 console.log(Object.freeze)// function freeze() { [native code] }
 console.log(Object.isFrozen)// function isFrozen() { [native code] }
@@ -120,6 +120,36 @@ console.log(Object.isFrozen)// function isFrozen() { [native code] }
 console.log(Object.seal)// prevents adding and/or removing properties
 console.log(Object.isSealed)// Returns true if the object is sealed, otherwise false
 
-console.log(Object.keys)// returns an array of a given object's own enumerable property
+console.log(Object.keys(obj2))// returns an array of a given object's own enumerable property
+console.log(Object.getOwnPropertyNames(obj2))// Object.getOwnPropertyNames(a) returns all own properties of the object a. Object.keys(a) returns all enumerable own properties
 console.log(Object.entries(Object))// returns an array of a given object's own enumerable only string-keyed property [key, value] pairs
 console.log(Object.values(obj2))// returns an array of a given object's own enumerable property values
+
+//are writable false object deletable
+let obj3 = {
+    "s": "d"
+}
+Object.defineProperty(obj3,'newNonWritableKey', {
+    value: "constant",
+    writable: false,
+    enumerable: true,
+    configurable: true
+})
+
+console.log(obj3.newNonWritableKey);
+try {
+    obj3.newNonWritableKey = "try changing";
+}catch(e) {
+    console.log("Catch writable error");
+}
+console.log(obj3.newNonWritableKey);
+
+
+for(let [key,value] of Object.entries(obj3)){
+    console.log(key + ": " + value);
+}
+delete obj3.newNonWritableKey;
+console.log("After deletion");
+for(let [key,value] of Object.entries(obj3)){
+    console.log(key + ": " + value);
+}

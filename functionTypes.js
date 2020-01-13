@@ -1,5 +1,10 @@
 // https://stackoverflow.com/questions/34361379/are-arrow-functions-and-functions-equivalent-exchangeable
+/*
+List of Javascript functions
+1. Anonymous function
+2. Constructor function
 
+*/
 // Constructor function
 
 function User(name) {
