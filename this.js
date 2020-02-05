@@ -6,6 +6,10 @@ function f1(){
 }
 f1();
 
+var y0 = function(){
+    console.log("y0",this.x);
+}
+y0();
 var y = () => {
     console.log(this.x);
 }
@@ -33,6 +37,12 @@ var obj = {
     },
     l: function(p){
         return p;
+    },
+    m: function(p){
+        return p.bind(this);
+    },
+    n: (p) => {
+        return p;
     }
 }
 obj.y();
@@ -41,4 +51,8 @@ var f3 = obj.k();
 f3();
 var f4 = obj.l(f1);
 f4();
+var f5 = obj.m(f1);
+f5();
+var f6 = obj.n(f1);
+f6();
 console.log("****************");
