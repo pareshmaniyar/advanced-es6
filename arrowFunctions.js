@@ -27,3 +27,18 @@ createObject2.call({foo: 21}).bar(); // override `this` inside createObject2
  */
 
 
+// currently common pattern
+var that = this;
+getData(function(data) {
+  that.data = data;
+});
+
+// better alternative with arrow functions
+getData(data => {
+  this.data = data;
+});
+
+//It is not possible to set an arrow function's this with .bind or .call
+
+
+
