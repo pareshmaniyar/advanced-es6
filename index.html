@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <style>
+            .parent {
+                width: 500px;
+                height: 500px;
+                position: relative;
+                background-color: green;
+            }
+            .child {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .parent2 {
+                width: 500px;
+                height: 500px;
+                background-color: green;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .child2 {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Absolute centering</h3>
+        <div class="parent">
+            <div class="child">Center</div>
+        </div>
+        <h3>FlexBox centering</h3>
+        <div class="parent2">
+            <div class="child2">Center</div>
+        </div>
+    </body>
+</html>
