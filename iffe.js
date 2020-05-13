@@ -10,6 +10,7 @@ var foo = "foo";
 (function (innerFoo) {
     // Outputs: "foo"
     console.log(innerFoo);
+    // console.log(this);
 })(foo);
 
 (function () {
@@ -21,8 +22,15 @@ var foo = "foo";
 
 let f1 = function(){
     console.log(this.foo);
+    // console.log(this);
 }
 f1();
 f1.bind(this);
 f1();
 
+let f2 = () => {
+    console.log(this.foo)
+    // console.log(this);
+}
+f2();
+f2.apply(this);

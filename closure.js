@@ -18,7 +18,7 @@ function makeAdder(x) {
 
 const increment = makeAdder(1);
 const x = increment(9);
-console.log(x);
+console.log("x: ", x);
 
 var counter = (function() {
   let _private_count = 0;

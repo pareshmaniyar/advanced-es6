@@ -20,18 +20,18 @@ console.log(addSix(10)); // returns 16
 console.log(addSix(21)); // returns 27
 
 //Creating a private counter
-function counter(){
+function counterA(){
   let c = 0;
   return function(){
     c = c + 1;
     return c;
   }
 }
-let a = counter();
-let b = counter();
-console.log("a: ",a());
-console.log("a: ",a());
-console.log("a: ",a());
+let a = counterA();
+let b = counterA();
+console.log("a: ", a());
+console.log("a: ", a());
+console.log("a: ", a());
 console.log(b());
 console.log(a());
 console.log(b());

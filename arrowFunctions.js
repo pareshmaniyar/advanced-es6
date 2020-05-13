@@ -1,4 +1,5 @@
 //https://stackoverflow.com/questions/34361379/are-arrow-functions-and-functions-equivalent-exchangeable
+let foo = 84;
 function createObject() {
     console.log('Inside `createObject`:', this.foo);
     return {
@@ -8,7 +9,10 @@ function createObject() {
       },
     };
   }
-  
+console.log("Creating object now..")
+let a = createObject();
+console.log("executing created object now..")
+a.bar();
 createObject.call({foo: 21}).bar(); // override `this` inside createObject
 
 // Example using a arrow function
@@ -19,7 +23,10 @@ function createObject2() {
       bar: () => console.log('Inside `bar`:', this.foo),
     };
   }
-  
+let b = createObject2();
+console.log("Creating object now..")
+b.bar();
+console.log("executing created object now..")
 createObject2.call({foo: 21}).bar(); // override `this` inside createObject2
 
 /**
@@ -28,6 +35,9 @@ createObject2.call({foo: 21}).bar(); // override `this` inside createObject2
 
 
 // currently common pattern
+getData = function(func) {
+  return func;
+}
 var that = this;
 getData(function(data) {
   that.data = data;
@@ -39,6 +49,3 @@ getData(data => {
 });
 
 //It is not possible to set an arrow function's this with .bind or .call
-
-
-
