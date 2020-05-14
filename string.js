@@ -15,3 +15,6 @@ strRev = strSplit.reverse();
 console.log(strRev);//[ 'g', 'f', 'e', 'd', 'c', 'b', 'a' ]
 revStr = str.split('').reverse().join("x");
 console.log(revStr + ' with xin b/w');
+console.log(str);
+console.log("asbcasbca".match(/bca/));
+console.log("asbcasbca".indexOf("bca"));
