@@ -68,22 +68,28 @@ const data = [
     ]
   }
 ];
-const small = [{
-  "name": "x13",
-  "value": "10110",
-  "levels": [
+const small = [
     {
-      "name": "x131",
-      "value": "9090",
-      "levels": [
-        {
-          "name": "x1311",
-          "value": "1101123"
-        }
-      ]
+        "name": "x12",
+        "value": "1011"
+    },
+    {
+        "name": "x13",
+        "value": "10110",
+        "levels": [
+            {
+                "name": "x131",
+                "value": "9090",
+                "levels": [
+                    {
+                    "name": "x1311",
+                    "value": "1101123"
+                    }
+                ]
+            }
+        ]
     }
-  ]
-}]
+]
 
 let result = [];
 function getArray(arr, index){
@@ -102,5 +108,32 @@ function getArray(arr, index){
   })
 }
 
-getArray(small);
-console.log(result);
+function generateArray(arr){
+    let res = [];
+    arr.forEach((item) => {
+        console.log("item: ", item);
+        if(item.hasOwnProperty("levels")) {
+            let val = generateArray(item["levels"]);
+            // console.log("values: ", val);
+            let values = [];
+            for(let i=0;i < val.length;i++){
+                values.push(...val[i].value);
+                i = i + (val[i].length - 1);
+            }
+            res.push({
+                "name": item["name"],
+                "value": [item["value"], ...values]
+            }, ...val);
+        } else {
+            res.push({
+                "name": item["name"],
+                "value": [item["value"]]
+            });
+        }
+    });
+    return res;
+}
+// generateArray(small);
+console.log(generateArray(data));
+// console.log(JSON.stringify(generateArray(small)));
+// console.log(result);
