@@ -1,17 +1,17 @@
 function* number () {
-    for(let i = 0; i<5; i++) {
+    for(let i = 0; i<3; i++) {
         console.log(i);
-        yield;
+        yield i;
     }
 }
 const y = number();
 
-y.next();
-y.next();
-y.next();
-y.next();
+console.log(y.next());
+console.log(y.next());
+console.log(y.next());
+console.log(y.next());
 
-number().next();
+// number().next().next().next();Error here!
 number().next();
 number().next();
 number().next();

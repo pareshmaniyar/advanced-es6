@@ -15,7 +15,8 @@ console.log(newArray);
 let arr = [1,2,3,4,5,6,7,8,9,10];
 let total10 = arr.reduce((total, x) => x+total, 10);///////////////
 console.log(total10);
-
+let total = arr.reduce((agg, item) => agg + ', ' +item, '');
+console.log("total: ", total);
 let greaterThanFiveArray = arr.filter(x => {//very tricky, if returns true
   if(x>5) return x+1;// pushes only the val
 });
