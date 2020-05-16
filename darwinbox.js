@@ -107,7 +107,7 @@ function getArray(arr, index){
     }
   })
 }
- 
+
 function generateArray(arr){
     let res = [];
     arr.forEach((item) => {
