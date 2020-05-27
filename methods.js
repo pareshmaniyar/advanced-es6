@@ -11,6 +11,7 @@ for(let i = 0;i < arr.length;i++){
         console.log("key: ", key, ", value: ", value);
     }
 }
+
 console.log("Function: ", Object.getOwnPropertyNames(Function));
 console.log("Function.prototype: ", Object.getOwnPropertyNames(Function.prototype));
 console.log("Math: ", Object.getOwnPropertyNames(Math));
