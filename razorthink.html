@@ -1,0 +1,79 @@
+<html>
+<head>
+<style>
+    .parent {
+        width: 500px;
+        height: 500px;
+        background-color: aqua;
+        position: relative;
+    }
+    .child {
+        width: 100px;
+        height: 100px;
+        background-color:tomato;
+        position: absolute;
+        margin-left: 50%;
+        margin-top: 50%;
+    }
+    .parent.active .child {
+        background-color: blue;
+    }
+    
+</style>
+<script>
+    let arr = [
+    {
+        "name": "one",
+        "age": 2
+    },
+    {
+        "name": "two",
+        "age": 4
+    },
+    {
+        "name": "three",
+        "age": 3
+    }
+]
+    let res = arr.reduce((ref, item) => {
+        if(item.age < ref) {
+            return ref;
+        }
+        return item.age
+    }, 0);
+    let arr1 = [1, 2, 3, 4];
+    res = [2, 4, 6, 8];
+    arr1.reduce((accum, num) => {
+        accum.push(num * 2);
+        return accum;
+    }, [])
+    let obj = {a: 1, b: 2, c: 3, d: 4};
+    // [[a, 1], [b, 2]]
+    Object.keys(obj).length
+    let arr1 = [1, 2, 3, 4];
+    let arr1 = [3, 4, 1, 2];
+    function shift(n, arr) {
+        let result = [];
+        // brute 
+        // n to arr.length
+        //from 0 to arr.length
+        // smartFunction(n + i) return mod arr.length % n
+        for(let i = n; i < arr.length; i++) {
+            result.push(arr[i]);
+        }
+        for(let i = 0; i < n; i++) {
+            result.push(arr[i]);
+        }
+        return result;
+    }
+    let res = shift(2, arr1);
+</script>
+</head>
+<body>
+<div class="parent active">
+    <div class="child">
+
+    </div>
+</div>
+</body>
+</html>
