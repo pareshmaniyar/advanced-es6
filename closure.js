@@ -42,3 +42,10 @@ counter.incOne();
 console.log(counter.value());
 counter.decOne();
 console.log(counter.value());
+
+function sum(a) {
+  return function (b) {
+    return b?sum(a + b):a;
+  }
+}
+console.log(sum(1)(2)(3)(4)());
