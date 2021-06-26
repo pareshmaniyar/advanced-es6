@@ -54,9 +54,9 @@ objInstance.i = 0;
 objInstance.i = "vsdf";
 console.log(objInstance.i);
 console.log(objInstance.getHistory());
-
+console.log("____________-_________________");
 const objFreeze = {
-    "a": "b"
+    a: "b"
 }
 objFreeze.a = "b changed";
 console.log(JSON.stringify(objFreeze));
@@ -64,7 +64,7 @@ Object.freeze(objFreeze);
 try {
     objFreeze.a = "b changed again";
 }catch(e){
-    console.log("Error Caught: ");
+    console.log("Error Caught: ", e);
 }
 console.log(JSON.stringify(objFreeze));
 
