@@ -1,0 +1,87 @@
+guy comes home
+100 identical coins
+60 - heads
+40 - tails
+/*
+All - 60T, 40H
+
+*/
+son and daughter
+
+jumble
+
+son - n times any of them
+1. divide in groups
+2. flip them
+
+finally two groups, then can't touch
+
+girl chooses one
+son has one
+
+father takes heads from both the groups, tails given to the child
+
+Boy doesn't want girl have more tails - loses - equal
+
+Grp1, Grp2
+9, 9
+
+H H H 
+H H H
+
+T T T T
+
+- make two groups where tails are equal
+- boys resp
+HHHHHHTTTT
+
+1. Divide tails equally
+
+HHHTTT
+
+***
+
+***
+
+Flips - What is factor
+HT - TT, HH
+HH - 
+
+- All the coins should be either heads or tails
+
+60 Heads, 40 tails
+Randomly
+- how many divide
+- when flip
+
+60
+40
+
+
+half of them - 50
+60H, 40T
+heads - range(10, 90)
+tails - range(90, 10)
+
+3:2
+3/5*100 = 60
+
+60H, 40T
+grp1 = 60
+head = range(20, 60)
+tails = range(0, 40)
+
+grp1 = 40
+head = range(0, 40)
+tails = range(0, 40)
+
+HHHHHT - TTTTTH
+TTTH - HHHT
+
+HHHHHH TTTT
+
+HHHTTT
+THHH - HTTT
+
+HHTTTT
+HHHH - TTTT
