@@ -26,3 +26,12 @@ if(true) {
 console.log(c); //c
 // console.log(d); // not defined
 
+function abc() {
+    console.log(b);
+}
+
+function n() {
+    let b = "won't print";
+    abc(); // b changed
+}
+n();
